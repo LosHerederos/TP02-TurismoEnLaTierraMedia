@@ -3,6 +3,11 @@
   <groupId>LosHerederos</groupId>
   <artifactId>TP02-TurismoEnLaTierraMedia</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <!-- Para usar la versión 16 de Java -->
+  <properties>
+    <maven.compiler.source>16</maven.compiler.source>
+    <maven.compiler.target>16</maven.compiler.target>
+  </properties>
 
   <dependencies>
     <!-- https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc -->
