@@ -1,0 +1,14 @@
+
+.settings/
+bin/
+/target/
+
+
+# Ignorar backup de imagenes
+*.bak.png
+
+# Ignorar archivos de salida
+*.out
+
+# Ignorar archivos de bases de datos
+*.db

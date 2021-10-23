@@ -1,0 +1,19 @@
+# tipo promocion / nombre / atracciones ( : ) / otros
+PromocionPorcentual, Pack aventura, (Bosque Negro : Mordor), 0.2
+PromocionPorcentual, Pack degustación, (Oktober Fest : Bodega El Barril), 0.2
+PromocionPorcentual, Pack paisajes, (Isla de los Pajaros : La Jungla), 0.2
+PromocionPorcentual, Pack aventura1, (Tren al Oeste : Viaje al Futuro : Tierra de Gigantes), 0.3
+PromocionPorcentual, Pack degustación1, (Sabores de Asia : Bodega El Barril), 0.15
+PromocionPorcentual, Pack paisajes1, (Isla de los Pajaros : La Jungla), 0.2
+PromocionAbsoluta, Pack aventura2, (Autos Locos : Montaña Extrema), 5
+PromocionAbsoluta, Pack degustación2, (Burger House : Todo Chocolate), 15
+PromocionAbsoluta, Pack paisajes2, (Isla de los Pajaros : Playa Paraiso), 10
+PromocionAbsoluta, Pack aventura3, (Castillo del Dragon : Tierra de fantasmas : Bosque Negro), 20
+PromocionAbsoluta, Pack degustación3, (Lothlórien : La Comarca), 36
+PromocionAbsoluta, Pack paisaje3, (La Jungla : Tirra de Gigantes : Abismo de Helm), 17
+PromocionAXB, Pack aventura4, (La Casa del Horror), (The Walking Dead Experience : Tierra de Fantasmas)
+PromocionAXB, Pack degustación4, (Nickelodeon Café), (Sabores de Asia : Bodega El Barril)
+PromocionAXB, Pack paisajes4, (Erebor), (Minas Tirith : Abismo de Helm)
+PromocionAXB, Pack aventura5, (Indiana Jones), (Star Wars : Piratas del Caribe)
+PromocionAXB, Pack degustación5, (La Comarca), (Nickelodeon Café : Todo Chocolate)
+PromocionAXB, Pack paisajes5, (Isla de los Pajaros), (Playa Paraiso : La Jungla)

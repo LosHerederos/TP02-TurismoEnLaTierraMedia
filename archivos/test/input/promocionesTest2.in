@@ -1,0 +1,5 @@
+# tipo promocion / nombre / atracciones ( : ) / otros
+PromocionAbsoluta, Pack Aventura 1, (Mi Aventura : Otra Aventura), 50
+#PromocionPorcentual, Pack aventura, (Moria : Minas Tirith), 20.0
+#PromocionAbsoluta, Pack aventura2, (Moria : Minas Tirith), 50
+#PromocionAXB, Pack aventura3, (Moria : Minas Tirith), (Otra que es Gratis)
