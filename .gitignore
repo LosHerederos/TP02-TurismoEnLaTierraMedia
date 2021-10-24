@@ -7,8 +7,12 @@ bin/
 # Ignorar backup de imagenes
 *.bak.png
 
+# Ignorar backup de script sql
+*.bak.sql
+
 # Ignorar archivos de salida
 *.out
 
 # Ignorar archivos de bases de datos
 *.db
+*.db-journal

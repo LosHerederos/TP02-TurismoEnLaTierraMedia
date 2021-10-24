@@ -1,4 +1,4 @@
--- Carga de datos
+-- Carga de datos 1
 
 -- Carga de Tipo de Atraccion
 INSERT INTO "TipoDeAtraccion" (
@@ -27,24 +27,36 @@ VALUES
 	('Galadriel', 120, 3.0, 2)
 ;
 
+-- Carga de Itinerarios
+INSERT INTO "Itinerarios" (
+	"idUsuario"
+)
+VALUES
+-- idUsuario: integer
+	(1),
+	(2),
+	(3),
+	(4)
+;
+
 -- Carga de Atracciones
 INSERT INTO "Atracciones" (
 	"nombre",
+	"costoVisita",
 	"tiempoParaRealizarla",
-	"visitantes",
 	"cupoPersonas",
 	"idTipoDeAtraccion"
 )
 VALUES
 -- nombre: text, tiempoParaRealizarla: real, visitantes: integer, cupoPersonas: integer, idTipoDeAtraccion: integer
-	('Moria', 2.0, 0, 6, 1),
-	('Minas Tirith', 2.5, 0, 25, 2),
-	('La Comarca', 6.5, 0, 150, 3),
-	('Mordor', 3.0, 0, 4, 1),
-	('Abismo del Helm', 2.0, 0, 15, 2),
-	('Lothlórien', 1.0, 0, 30, 3),
-	('Erebor', 3.0, 0, 32, 2),
-	('Bosque Negro', 4.0, 0, 12, 1)
+	('Moria', 10, 2.0, 6, 1),
+	('Minas Tirith', 5, 2.5, 25, 2),
+	('La Comarca', 3, 6.5, 150, 3),
+	('Mordor', 25, 3.0, 4, 1),
+	('Abismo del Helm', 5, 2.0, 15, 2),
+	('Lothlórien', 35, 1.0, 30, 3),
+	('Erebor', 12, 3.0, 32, 2),
+	('Bosque Negro', 3, 4.0, 12, 1)
 ;
 
 -- Carga de Promociones base
@@ -62,17 +74,16 @@ VALUES
 -- Carga de Atracciones de Promociones
 INSERT INTO "AtraccionesDePromociones" (
 	"idPromocion",
-	"idAtraccion",
-	"promocionNoGeneral"
+	"idAtraccion"
 )
 VALUES
 -- idPromocion: integer, idAtraccion: integer, promocionNoGeneral: integer
-	(1, 8, 0),
-	(1, 4, 0),
-	(2, 6, 0),
-	(2, 3, 0),
-	(3, 2, 0),
-	(3, 5, 0)
+	(1, 8),
+	(1, 4),
+	(2, 6),
+	(2, 3),
+	(3, 2),
+	(3, 5)
 ;
 
 -- Carga de Promociones absolutas
