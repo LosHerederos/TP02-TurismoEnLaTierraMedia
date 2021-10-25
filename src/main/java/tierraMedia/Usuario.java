@@ -2,6 +2,8 @@ package tierraMedia;
 import java.util.Objects;
 
 public class Usuario {
+	
+	private int idUsuario;
 	private String nombre;
 	private int presupuesto;
 	private Itinerario itinerario;
@@ -16,13 +18,22 @@ public class Usuario {
 		this.tipoFavorito = null;
 	}
 	
-	public Usuario(String nombre, int presupuesto, double tiempoDisponible,
-			TipoDeAtracciones tipoFavorito) {
+	public Usuario(
+		int id,
+		String nombre, 
+		int presupuesto,
+		double tiempoDisponible,
+		TipoDeAtracciones tipoFavorito
+	) {
 		this.nombre = nombre;
 		setPresupuesto(presupuesto);
 		this.itinerario = new Itinerario();
 		setTiempoDisponible(tiempoDisponible);
 		this.tipoFavorito = tipoFavorito;
+	}
+	
+	public int getIdUsuario() {
+		return idUsuario;
 	}
 
 	public String getNombre() {

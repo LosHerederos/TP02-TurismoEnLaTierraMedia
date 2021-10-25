@@ -41,7 +41,7 @@ public class Archivos {
 			tiempoDisponible = Double.parseDouble(datosDeUsuarios[i][2]);
 			tipoFavorito = TipoDeAtracciones.valueOf(datosDeUsuarios[i][3]);
 			
-			usuarios.add(new Usuario(nombre, presupuesto, tiempoDisponible, tipoFavorito));
+			usuarios.add(new Usuario(0, nombre, presupuesto, tiempoDisponible, tipoFavorito));
 		}
 		
 		return usuarios;
