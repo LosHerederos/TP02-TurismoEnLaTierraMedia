@@ -63,13 +63,27 @@ public class SistemaDeSugerencias {
 		for (Usuario usuario : usuarios) {
 			if (!this.usuarios.contains(usuario) && usuarioValido(usuario)){
 				this.usuarios.add(usuario);
-				menuSugerencias(usuario);
 			}
 		}
 	}
-
-	public void menuSugerencias(Usuario usuario){
+	
+	public void iniciarMenu() {
 		ordenarPorPrecioYTiempo();
+		Scanner respuesta = new Scanner(System.in);
+		System.out.println("Oprimir ENTER para comenzar");
+		for (Usuario usuario : usuarios) {
+			try {
+				System.in.read();
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			System.out.println(System.lineSeparator().repeat(100));
+			menuSugerencias(usuario);
+			System.out.println("Oprimir ENTER para finalizar");
+		}
+	}
+	
+	public void menuSugerencias(Usuario usuario){
 		System.out.println("____________________________________________________________________________________________________");
 		System.out.println("Bienvenido " + usuario.getNombre() + "!");
 		System.out.println("Basandonos en sus preferencias, tenemos las siguientes promociones y atraciones para ofrecerle:");
@@ -95,15 +109,7 @@ public class SistemaDeSugerencias {
 		int respuesta;
 		while (usuario.poseeRecursosSuficientes(0, 0) && !sugerencias.isEmpty()) {
 			if (!usuario.estaEnElItinerario(sugerencias.getFirst()) && sugerenciaDisponible(sugerencias.getFirst(), usuario)) {
-				if (sugerencias.getFirst() instanceof Atraccion) {
-					System.out.println("\nAtracción:");
-					System.out.println("|Nombre de atracción| \t\t |Tipo de atracción| \t |Costo| \t |Tiempo|");
-				}
-				else if (sugerencias.getFirst() instanceof Promocion) {
-					System.out.println("\nPromoción:");
-					System.out.println("|Nombre de Pack| \t\t |tipo de atraccion| \t |Costo| \t |tiempo| \t |Atracciones incluidas|");
-				}
-				System.out.println(sugerencias.getFirst().toString());
+				mostrarSugeribles(sugerencias.getFirst());
 				System.out.print("\n¿Acepta nuestra sugerencia? (0: Rechazarla / 1: Aceptarla): ");
 				respuesta = new Scanner(System.in).nextInt();
 				if (respuesta == 1) {
@@ -113,6 +119,18 @@ public class SistemaDeSugerencias {
 			}
 			sugerencias.removeFirst();
 		}
+	}
+	
+	private void mostrarSugeribles(Sugeribles sugerible) {
+		if (sugerible instanceof Atraccion) {
+			System.out.println("\nAtracción:");
+			System.out.println("|Nombre de atracción| \t\t |Tipo de atracción| \t |Costo| \t |Tiempo|");
+		}
+		else if (sugerible instanceof Promocion) {
+			System.out.println("\nPromoción:");
+			System.out.println("|Nombre de Pack| \t\t |tipo de atraccion| \t |Costo| \t |tiempo| \t |Atracciones incluidas|");
+		}
+		System.out.println(sugerible.toString());
 	}
 
 	public void ordenarPorPrecioYTiempo() {

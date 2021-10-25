@@ -9,8 +9,9 @@ public class Main {
 
 		System.out.println(" Bienvenidos!");
 		System.out.println(
-			"****************************************************************************************************\n");
-		SistemaDeSugerencias sistema = new SistemaDeSugerencias();
+				"****************************************************************************************************\n");
+		 SistemaDeSugerencias sistema = new SistemaDeSugerencias();
+		 sistema.iniciarMenu();
 	}
 
 }
