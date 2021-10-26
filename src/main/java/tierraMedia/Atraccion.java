@@ -4,6 +4,7 @@ import java.util.Objects;
 
 public class Atraccion implements Sugeribles {
 
+	private int idAtraccion;
 	private int costoVisita;
 	private double tiempoParaRealizarla;
 	private int cupoPersonas;
@@ -12,7 +13,8 @@ public class Atraccion implements Sugeribles {
 	private String nombre;
 
 	// constructor
-	public Atraccion(int costo, double tiempo, int cupo, TipoDeAtracciones tipoAtraccion, String nombre) {
+	public Atraccion(int idAtraccion, int costo, double tiempo, int cupo, TipoDeAtracciones tipoAtraccion, String nombre) {
+		this.setintIdAtraccion(idAtraccion);
 		this.setCostoVisita(costo);
 		this.setTiempoParaRealizarla(tiempo);
 		this.setCupoPersonas(cupo);
@@ -33,7 +35,15 @@ public class Atraccion implements Sugeribles {
 	public int getCosto() {
 		return this.costoVisita;
 	}
+	
+	public void setintIdAtraccion(int idAtraccion) {
+		this.idAtraccion = idAtraccion;
+	}
 
+	public int getIdAtraccion() {
+		return idAtraccion;
+	}
+	
 	public void setCostoVisita(int costoVisita) {
 		this.costoVisita = costoVisita;
 	}
