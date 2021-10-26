@@ -1,11 +1,14 @@
---Consulta para actualizar presupuesto y tiempoDisponible de Usuarios*/
-SELECT  sum(Atracciones.Costo) As suma, * 
-	FROM Usuarios
-		JOIN Itinerarios
-			ON Usuarios.idUsuario = Itinerarios.idUsuario
+--Consulta para actualizar presupuesto y tiempoDisponible de Usuarios
+UPDATE Usuarios
+SET presupuesto = presupuesto - totalPago, 
+	tiempoDisponible = tiempoDisponible - tiempoTotal
+FROM (SELECT  sum(Atracciones.Costo) As totalPago, sum(tiempoParaRealizarla) As tiempoTotal
+	FROM Atracciones 
 		JOIN AtraccionesDeItinerario
-			ON Itinerarios.idItinerario = AtraccionesDeItinerario.iditinerario
-		JOIN Atracciones
-			ON AtraccionesDeItinerario.idAtraccion = Atracciones.idAtraccion
-WHERE Usuarios.idusuario = 1;
---Consulta para actualizar visitantes de Atracciones
+			ON Atracciones.idAtraccion = AtraccionesDeItinerario.idAtraccion
+		JOIN Itinerarios
+			ON Itinerarios.idItinerario = AtraccionesDeItinerario.idItinerario
+		WHERE idUsuario = 1
+		)
+		WHERE usuarios.idUsuario = 1;
+--Consulta para actualizar presupuesto y tiempoDisponible de Usuarios
