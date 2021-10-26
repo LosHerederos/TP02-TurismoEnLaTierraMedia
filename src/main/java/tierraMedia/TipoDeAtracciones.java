@@ -1,8 +1,8 @@
 package tierraMedia;
 
 public enum TipoDeAtracciones {
-	PAISAJE("Atracción de paisaje"),
 	AVENTURA("Atracción de aventuras"),
+	PAISAJE("Atracción de paisaje"),
 	DEGUSTACION("Atracción de degustacion");
 	
 	private final String descripcion;

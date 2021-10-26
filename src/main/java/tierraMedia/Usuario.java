@@ -19,12 +19,13 @@ public class Usuario {
 	}
 	
 	public Usuario(
-		int id,
+		int idUsuario,
 		String nombre, 
 		int presupuesto,
 		double tiempoDisponible,
 		TipoDeAtracciones tipoFavorito
 	) {
+		this.idUsuario = idUsuario;
 		this.nombre = nombre;
 		setPresupuesto(presupuesto);
 		this.itinerario = new Itinerario();
