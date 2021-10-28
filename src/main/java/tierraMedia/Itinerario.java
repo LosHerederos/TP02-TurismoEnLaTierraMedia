@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Itinerario {
+	
+	private int idItinerario;
 	private List<Atraccion> atracciones;
 	private List<Promocion> promociones;
 	
@@ -12,10 +14,20 @@ public class Itinerario {
 		this.promociones = new ArrayList<Promocion>();
 	}
 	
-	public Itinerario(List<Atraccion> atracciones, List<Promocion> promociones) {
+	public Itinerario(int idItinerario) {
+		this();
+		this.idItinerario = idItinerario;
+	}
+	
+	public Itinerario(int idItinerario, List<Atraccion> atracciones, List<Promocion> promociones) {
 		super();
+		this.idItinerario = idItinerario;
 		this.atracciones = atracciones;
 		this.promociones = promociones;
+	}
+	
+	public int getIdItinerario() {
+		return this.idItinerario;
 	}
 
 	public List<Atraccion> getAtracciones() {

@@ -8,7 +8,7 @@ public class AtraccionTest {
 
 	@Test
 	public void test() {
-		Atraccion atraccion = new Atraccion(25, 2.5, 10, TipoDeAtracciones.AVENTURA, "Una aventura como ninguna");
+		Atraccion atraccion = new Atraccion(0, 25, 2.5, 10, TipoDeAtracciones.AVENTURA, "Una aventura como ninguna");
 		assertEquals(25, atraccion.getCosto());
 		assertEquals(2.5, atraccion.getTiempo(), 0.001);
 		assertEquals(10, atraccion.getCupoPersonas());

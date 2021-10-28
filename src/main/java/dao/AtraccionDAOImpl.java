@@ -122,7 +122,7 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 	private Atraccion toAtraccion(ResultSet resultado) throws SQLException {
 		
 		return new Atraccion(
-		    resultado.getInt("idAtraccion"),			
+			resultado.getInt("idAtraccion"),
 			resultado.getInt("costoVisita"),
 			resultado.getDouble("tiempoParaRealizarla"),
 			resultado.getInt("cupoPersonas"),

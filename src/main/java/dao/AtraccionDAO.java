@@ -2,7 +2,9 @@ package dao;
 
 import java.sql.SQLException;
 
-public interface AtraccionDAO extends GenericDAO<tierraMedia.Atraccion> {
+import tierraMedia.Atraccion;
 
-	public tierraMedia.Atraccion findByNombre(String nombre) throws SQLException;
+public interface AtraccionDAO extends GenericDAO<Atraccion> {
+
+	public Atraccion findByNombre(String nombre) throws SQLException;
 }

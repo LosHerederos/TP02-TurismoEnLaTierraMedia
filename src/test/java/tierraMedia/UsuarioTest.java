@@ -8,8 +8,8 @@ public class UsuarioTest {
 
 	@Test
 	public void aceptarSugerenciatest() {
-		Usuario usuario = new Usuario("Pedro", 100, 10.0, TipoDeAtracciones.AVENTURA);
-		Atraccion atraccion = new Atraccion(25, 2.5, 10, TipoDeAtracciones.AVENTURA, "Una aventura como ninguna");
+		Usuario usuario = new Usuario(0, "Pedro", 100, 10.0, TipoDeAtracciones.AVENTURA, null);
+		Atraccion atraccion = new Atraccion(0, 25, 2.5, 10, TipoDeAtracciones.AVENTURA, "Una aventura como ninguna");
 		usuario.aceptarSugerencia(atraccion);
 		assertEquals(1, atraccion.getVisitantes());
 		assertEquals(75, usuario.getPresupuesto());
@@ -19,7 +19,7 @@ public class UsuarioTest {
 
 	@Test
 	public void poseeRecursosSuficientesTest() {
-		Usuario usuario = new Usuario("Pedro", 10, 3.0, TipoDeAtracciones.AVENTURA);
+		Usuario usuario = new Usuario(0, "Pedro", 10, 3.0, TipoDeAtracciones.AVENTURA, null);
 		assertTrue(usuario.poseeRecursosSuficientes(5, 1.0));
 		assertFalse(usuario.poseeRecursosSuficientes(15, 1.0));
 		assertFalse(usuario.poseeRecursosSuficientes(5, 4.0));

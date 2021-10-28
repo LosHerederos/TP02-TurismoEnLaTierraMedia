@@ -14,7 +14,7 @@ public class Atraccion implements Sugeribles {
 
 	// constructor
 	public Atraccion(int idAtraccion, int costo, double tiempo, int cupo, TipoDeAtracciones tipoAtraccion, String nombre) {
-		this.setintIdAtraccion(idAtraccion);
+		this.setIdAtraccion(idAtraccion);
 		this.setCostoVisita(costo);
 		this.setTiempoParaRealizarla(tiempo);
 		this.setCupoPersonas(cupo);
@@ -36,7 +36,7 @@ public class Atraccion implements Sugeribles {
 		return this.costoVisita;
 	}
 	
-	public void setintIdAtraccion(int idAtraccion) {
+	public void setIdAtraccion(int idAtraccion) {
 		this.idAtraccion = idAtraccion;
 	}
 

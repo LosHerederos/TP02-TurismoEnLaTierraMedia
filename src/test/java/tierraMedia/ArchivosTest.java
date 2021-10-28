@@ -89,11 +89,11 @@ public class ArchivosTest {
 	@Test
 	public void generarArchivosDeSalidaTest() {
 		List<Usuario> usuarios = new ArrayList<Usuario>();
-		usuarios.add(new Usuario("Pedro", 100, 10.0, TipoDeAtracciones.AVENTURA));
-		usuarios.add(new Usuario("Jose", 70, 7.5, TipoDeAtracciones.DEGUSTACION));
+		usuarios.add(new Usuario(0, "Pedro", 100, 10.0, TipoDeAtracciones.AVENTURA, null));
+		usuarios.add(new Usuario(0, "Jose", 70, 7.5, TipoDeAtracciones.DEGUSTACION, null));
 //		String nombre, int presupuesto, double tiempoDisponible,TipoDeAtracciones tipoFavorito
-		Atraccion atraccion1 = new Atraccion(25, 2.5, 10, TipoDeAtracciones.AVENTURA, "Una aventura como ninguna1");
-		Atraccion atraccion2 = new Atraccion(25, 2.5, 10, TipoDeAtracciones.AVENTURA, "Una aventura como ninguna2");
+		Atraccion atraccion1 = new Atraccion(0, 25, 2.5, 10, TipoDeAtracciones.AVENTURA, "Una aventura como ninguna1");
+		Atraccion atraccion2 = new Atraccion(0, 25, 2.5, 10, TipoDeAtracciones.AVENTURA, "Una aventura como ninguna2");
 		
 		usuarios.get(0).aceptarSugerencia(atraccion1);
 		usuarios.get(0).aceptarSugerencia(atraccion2);

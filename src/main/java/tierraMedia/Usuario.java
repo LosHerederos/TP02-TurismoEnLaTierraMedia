@@ -23,12 +23,17 @@ public class Usuario {
 		String nombre, 
 		int presupuesto,
 		double tiempoDisponible,
-		TipoDeAtracciones tipoFavorito
+		TipoDeAtracciones tipoFavorito,
+		Itinerario itinerario
 	) {
 		this.idUsuario = idUsuario;
 		this.nombre = nombre;
 		setPresupuesto(presupuesto);
-		this.itinerario = new Itinerario();
+		if (itinerario == null) {
+			this.itinerario = new Itinerario();
+		} else {
+			this.itinerario = itinerario;
+		}
 		setTiempoDisponible(tiempoDisponible);
 		this.tipoFavorito = tipoFavorito;
 	}
