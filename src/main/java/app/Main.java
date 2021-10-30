@@ -11,7 +11,12 @@ public class Main {
 		System.out.println(
 				"****************************************************************************************************\n");
 		 SistemaDeSugerencias sistema = new SistemaDeSugerencias();
-		 sistema.iniciarMenu();
+		  try {
+			sistema.iniciarMenu();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }
