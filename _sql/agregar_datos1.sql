@@ -82,8 +82,7 @@ VALUES
 	(1, 4),
 	(2, 6),
 	(2, 3),
-	(3, 2),
-	(3, 5)
+	(3, 7)
 ;
 
 -- Carga de Promociones absolutas
@@ -103,7 +102,7 @@ INSERT INTO "PromocionPorcentual" (
 )
 VALUES
 -- idPromocion: integer, porcentuajeDeDescuento: real
-	(1, 20.0)
+	(1, 0.2)
 ;
 
 -- Carga de Promociones AxB
@@ -122,5 +121,6 @@ INSERT INTO "AtraccionesDePromociones" (
 	"promocionNoGeneral"
 )
 VALUES
-	(1, 7, 1)
+	(1, 2, 1),
+	(1, 5, 1)
 ;

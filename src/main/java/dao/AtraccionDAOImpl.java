@@ -82,11 +82,9 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 	
 	public int update(Atraccion atraccion) throws SQLException {
 		String sql = "UPDATE Atracciones\n"
-				+ "SET visitantes = ?,\n"
+				+ "SET visitantes = ?\n"
 				+ "WHERE idAtraccion = ?;";
-		System.out.println(sql);
-		System.out.println(atraccion.getVisitantes());
-		System.out.println(atraccion.getIdAtraccion());
+
 		Connection conexion = ConnectionProvider.getConnection();
 		PreparedStatement statement = conexion.prepareStatement(sql);
 		statement.setInt(1, atraccion.getVisitantes());

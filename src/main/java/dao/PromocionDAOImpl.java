@@ -112,7 +112,6 @@ public class PromocionDAOImpl implements PromocionDAO {
 		String nombre = resultado.getString("nombre");
 		String tipoDePromocion = resultado.getString("tipoDePromocion");
 		
-		System.out.println(tipoDePromocion);
 		if (tipoDePromocion.equals("PromocionAbsoluta")) {
 			int idPromocionAbsoluta = resultado.getInt("idPromocionAbsoluta");
 			int descuento = resultado.getInt("descuento");
@@ -127,6 +126,7 @@ public class PromocionDAOImpl implements PromocionDAO {
 		} else if (tipoDePromocion.equals("PromocionAXB")) {
 			int idPromocionAXB = resultado.getInt("idPromocionAXB");
 			List<Atraccion> atraccionesPagas = new ArrayList<Atraccion>();
+//			atraccionesPagas
 			
 			promocion = new PromocionAXB(
 				idPromocion,
@@ -158,7 +158,7 @@ public class PromocionDAOImpl implements PromocionDAO {
 		
 		Connection conexion = ConnectionProvider.getConnection();
 		PreparedStatement statement = conexion.prepareStatement(sql);
-		statement.setInt(1, 1);
+		statement.setInt(1, promocion.getIdPromocion());
 		ResultSet resultados = statement.executeQuery();
 		
 		List<Integer> idsAtracciones = new ArrayList<Integer>();
@@ -179,7 +179,7 @@ public class PromocionDAOImpl implements PromocionDAO {
 			promocion.setTipodeAtraccion();
 		}
 		
-		if (promocion.getClass().getSimpleName() == "PromocionAXB") {
+		if (promocion.getClass().getSimpleName().equals("PromocionAXB")) {
 			sql = "SELECT *\n"
 				+ "FROM AtraccionesDePromociones\n"
 				+ "WHERE idPromocion = ? AND promocionNoGeneral;";
@@ -200,7 +200,7 @@ public class PromocionDAOImpl implements PromocionDAO {
 			for (Atraccion atraccion: todasLasAtracciones) {
 				Integer idAtraccion = atraccion.getIdAtraccion();
 				if (idsAtracciones.contains(idAtraccion)) {
-					promocion.getAtraccion().add(atraccion);
+					promocionAXB.getAtraccionesPagas().add(atraccion);
 				}
 			}
 		}

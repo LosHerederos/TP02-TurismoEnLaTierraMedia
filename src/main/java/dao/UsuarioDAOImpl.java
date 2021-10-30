@@ -104,6 +104,8 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 		statement.setDouble(2, usuario.getTiempoDisponible());
 		statement.setInt(3, usuario.getIdUsuario());
 		int filas = statement.executeUpdate();
+		
+		this.itinerarioDAO.update(usuario.getItinerario());
 
 		return filas;
 	}

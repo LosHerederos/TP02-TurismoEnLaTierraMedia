@@ -53,8 +53,26 @@ public class BaseDeDatos {
 		return usuarios;
 	}
 	
-	public static void guardarDatos(List<Usuario> usuarios) {
+	public static void guardarDatos(List<Usuario> todosLosUsuarios, List<Atraccion> todasLasAtracciones) {
+		UsuarioDAO usuarioDAO = DAOFactory.getUsuarioDAO();
+		AtraccionDAO atraccionDAO = DAOFactory.getAtraccionDAO();
 		
+		for (Usuario usuario : todosLosUsuarios) {
+			try {
+				usuarioDAO.update(usuario);
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			
+		}
+		
+		for (Atraccion atraccion : todasLasAtracciones) {
+			try {
+				atraccionDAO.update(atraccion);
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
 	}
 
 }
