@@ -18,6 +18,15 @@ public class PromocionAXB extends Promocion {
 	public int getIdPromocionAXB() {
 		return this.idPromocionAXB;
 	}
+	
+	public List<Atraccion> getAtraccion() {
+		List<Atraccion> atraccionesDePromocion = new ArrayList<Atraccion>();
+		
+		atraccionesDePromocion.addAll(super.getAtraccion());
+		atraccionesDePromocion.addAll(this.atraccionesPagas);
+		
+		return atraccionesDePromocion;
+	}
 
 	public List<Atraccion> getAtraccionesPagas() {
 		return this.atraccionesPagas;

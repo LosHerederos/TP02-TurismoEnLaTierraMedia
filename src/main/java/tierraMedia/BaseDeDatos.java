@@ -74,5 +74,33 @@ public class BaseDeDatos {
 			}
 		}
 	}
-
+	
+	public static void guardarDatos(Usuario usuario) {
+		UsuarioDAO usuarioDAO = DAOFactory.getUsuarioDAO();
+		AtraccionDAO atraccionDAO = DAOFactory.getAtraccionDAO();
+		
+		List<Atraccion> atraccionesDelUsuario = new ArrayList<Atraccion>();
+		List<Promocion> promocionesDelUsuario = usuario.getItinerario().getPromociones();
+		
+		atraccionesDelUsuario.addAll(usuario.getItinerario().getAtracciones());
+		
+		for (Promocion promocion : promocionesDelUsuario) {
+			atraccionesDelUsuario.addAll(promocion.getAtraccion());
+		}
+		
+		try {
+			usuarioDAO.update(usuario);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		for (Atraccion atraccion : atraccionesDelUsuario) {
+			try {
+				atraccionDAO.update(atraccion);
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
 }
