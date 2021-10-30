@@ -8,7 +8,6 @@ import java.util.List;
 import java.util.Scanner;
 
 public class SistemaDeSugerencias {
-
 	private List<Atraccion> atracciones = new ArrayList<Atraccion>();
 	private List<Promocion> promociones = new ArrayList<Promocion>();
 	private List<Usuario> usuarios = new ArrayList<Usuario>();
@@ -118,7 +117,6 @@ public class SistemaDeSugerencias {
 				System.out.print("\n¿Acepta nuestra sugerencia? (0: Rechazarla / 1: Aceptarla): ");
 				respuesta = new Scanner(System.in).nextInt();
 				if (respuesta == 1) {
-					sugerencias.getFirst().agregarVisitante();
 					usuario.aceptarSugerencia(sugerencias.getFirst());
 				}
 			}
