@@ -93,6 +93,13 @@ public class SistemaDeSugerencias {
 		System.out.println(usuario.getItinerario().toString());
 		BaseDeDatos.guardarDatos(usuario);
 	}
+	
+	public void mostrarUsuarios() {
+		System.out.println("Usuarios del sistema =");
+		for (int i = 0; i < usuarios.size(); i++) {
+			System.out.println(i + "\t \t" + usuarios.get(i).getNombre());
+		}
+	}
 
 	private LinkedList<Sugeribles> enlistarSugerencias(Usuario usuario, Boolean preferencias){
 		LinkedList<Sugeribles> sugerencias = new LinkedList<Sugeribles>();
