@@ -14,13 +14,12 @@ public class SistemaDeSugerencias {
 	private List<Usuario> usuarios = new ArrayList<Usuario>();
 
 	public SistemaDeSugerencias() {
-		setAtracciones(Archivos.cargarAtracciones());
-		setPromociones(Archivos.cargarPromociones(this.atracciones));
-		setUsuarios(Archivos.cargarUsuarios());
+		setAtracciones(BaseDeDatos.cargarAtracciones());
+		setPromociones(BaseDeDatos.cargarPromociones(this.atracciones));
+		setUsuarios(BaseDeDatos.cargarUsuarios(this.atracciones, this.promociones));
 		try {
-			Archivos.generarArchivosDeSalida(this.usuarios);
+			BaseDeDatos.guardarDatos(this.usuarios, this.atracciones);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
