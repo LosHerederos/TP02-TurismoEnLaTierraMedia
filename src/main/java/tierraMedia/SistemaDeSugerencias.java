@@ -96,7 +96,7 @@ public class SistemaDeSugerencias {
 	public void mostrarUsuarios() {
 		System.out.println("Usuarios del sistema =");
 		for (Usuario usuario : usuarios) {
-			System.out.println(usuario.getIdUsuario() + "/t" + usuario.getNombre());
+			System.out.println(usuario.getIdUsuario() + "\t" + usuario.getNombre());
 		}
 	}
 
