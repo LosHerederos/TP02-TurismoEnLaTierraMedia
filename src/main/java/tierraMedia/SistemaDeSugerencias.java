@@ -17,11 +17,6 @@ public class SistemaDeSugerencias {
 		setAtracciones(BaseDeDatos.cargarAtracciones());
 		setPromociones(BaseDeDatos.cargarPromociones(this.atracciones));
 		setUsuarios(BaseDeDatos.cargarUsuarios(this.atracciones, this.promociones));
-		try {
-			BaseDeDatos.guardarDatos(this.usuarios, this.atracciones);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
 	}
 
 
@@ -66,19 +61,22 @@ public class SistemaDeSugerencias {
 		}
 	}
 	
-	public void iniciarMenu() {
+	public void iniciarMenu() throws IOException {
 		ordenarPorPrecioYTiempo();
 		Scanner respuesta = new Scanner(System.in);
 		System.out.println("Oprimir ENTER para comenzar");
-		for (Usuario usuario : usuarios) {
-			try {
-				System.in.read();
-			} catch (Exception e) {
-				// TODO: handle exception
-			}
+		System.in.read();
+		System.out.println("Seleccionar un id de usuario o 0 para finalizar");
+		mostrarUsuarios();
+		int id = respuesta.nextInt();
+		while (id !=0) {
 			System.out.println(System.lineSeparator().repeat(100));
-			menuSugerencias(usuario);
+			menuSugerencias(usuarioDeId(id));
 			System.out.println("Oprimir ENTER para finalizar");
+			System.in.read();
+			System.out.println("Seleccionar un id de usuario o 0 para finalizar");
+			mostrarUsuarios();
+			id = respuesta.nextInt();
 		}
 	}
 	
@@ -93,6 +91,7 @@ public class SistemaDeSugerencias {
 		}
 		System.out.println("\nSu itinerario quedo de la siguiente forma:");
 		System.out.println(usuario.getItinerario().toString());
+		BaseDeDatos.guardarDatos(usuario);
 	}
 
 	private LinkedList<Sugeribles> enlistarSugerencias(Usuario usuario, Boolean preferencias){
@@ -158,6 +157,10 @@ public class SistemaDeSugerencias {
 
 	private Boolean sugerenciaDisponible(Sugeribles opc, Usuario usuario){
 		return !opc.esCupoCompleto() && usuario.poseeRecursosSuficientes(opc.getCosto(), opc.getTiempo());
+	}
+	
+	private Usuario usuarioDeId(int id) {
+		return usuarios.get(usuarios.indexOf(new Usuario(id,"",0,0,null,null)));
 	}
 
 	@Override
