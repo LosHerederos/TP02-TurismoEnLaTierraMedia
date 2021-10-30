@@ -106,7 +106,7 @@ public class Usuario {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(nombre, tipoFavorito);
+		return Objects.hash(idUsuario);
 	}
 
 	@Override
@@ -118,9 +118,8 @@ public class Usuario {
 		if (getClass() != obj.getClass())
 			return false;
 		Usuario other = (Usuario) obj;
-		return Objects.equals(nombre, other.nombre) && tipoFavorito == other.tipoFavorito;
+		return idUsuario == other.idUsuario;
 	}
-
 	@Override
 	public String toString() {
 		return "Nombre: " + this.nombre + "\t\tTipo de favorito: " + this.tipoFavorito + "\n"
