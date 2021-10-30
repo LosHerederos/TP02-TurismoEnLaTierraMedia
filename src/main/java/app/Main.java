@@ -1,6 +1,7 @@
 package app;
 
 import tierraMedia.SistemaDeSugerencias;
+import java.io.IOException;
 
 
 public class Main {
