@@ -3,11 +3,17 @@ package tierraMedia;
 import java.util.List;
 
 public class PromocionPorcentual extends Promocion {
+	private int idPromocionPorcentual;
 	private double porcentaje;
 
-	public PromocionPorcentual(String nombre, List<Atraccion> atracciones, double porcentaje) {
-		super(nombre, atracciones);
+	public PromocionPorcentual(int idPromocion, int idPromocionPorcentual, String nombre, List<Atraccion> atracciones, double porcentaje) {
+		super(idPromocion, nombre, atracciones);
+		this.idPromocionPorcentual = idPromocionPorcentual;
 		this.setPorcentaje(porcentaje);
+	}
+	
+	public int getIdPromocionPorcentual() {
+		return this.idPromocionPorcentual;
 	}
 
 	public void setPorcentaje(double porcentaje) {

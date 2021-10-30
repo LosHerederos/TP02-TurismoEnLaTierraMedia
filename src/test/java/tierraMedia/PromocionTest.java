@@ -31,9 +31,9 @@ public class PromocionTest {
 	@Test
 	public void promocionPorcentualTest() {
 		//Pack aventura: Bosque Negro y Mordor con un 20% de descuento si se compran ambas.
-		atracciones.add(new Atraccion(3, 4.0, 12, TipoDeAtracciones.AVENTURA, "Bosque Negro"));
-		atracciones.add(new Atraccion(25, 3.0, 4, TipoDeAtracciones.AVENTURA, "Mordor"));
-		PromocionPorcentual promoPorcentual = new PromocionPorcentual("Pack aventura", atracciones, 0.2);
+		atracciones.add(new Atraccion(0, 3, 4.0, 12, TipoDeAtracciones.AVENTURA, "Bosque Negro"));
+		atracciones.add(new Atraccion(0, 25, 3.0, 4, TipoDeAtracciones.AVENTURA, "Mordor"));
+		PromocionPorcentual promoPorcentual = new PromocionPorcentual(0, 0, "Pack aventura", atracciones, 0.2);
 		assertEquals(22, promoPorcentual.getCosto());
 		assertEquals(7.0, promoPorcentual.getTiempo(), 0.001);
 		assertEquals(TipoDeAtracciones.AVENTURA, promoPorcentual.getTipoDeAtraccion());
@@ -51,9 +51,9 @@ public class PromocionTest {
 	@Test
 	public void promocionAbsolutaTest() {
 		//Pack degustación: Lothlórien y La Comarca a 36 monedas.
-		atracciones.add(new Atraccion(35, 1.0, 30, TipoDeAtracciones.DEGUSTACION, "Lothlórien"));
-		atracciones.add(new Atraccion(3, 6.5, 150, TipoDeAtracciones.DEGUSTACION, "La Comarca"));
-		PromocionAbsoluta promoAbsoluta = new PromocionAbsoluta("Pack degustación", atracciones, 36);
+		atracciones.add(new Atraccion(0, 35, 1.0, 30, TipoDeAtracciones.DEGUSTACION, "Lothlórien"));
+		atracciones.add(new Atraccion(0, 3, 6.5, 150, TipoDeAtracciones.DEGUSTACION, "La Comarca"));
+		PromocionAbsoluta promoAbsoluta = new PromocionAbsoluta(0, 0, "Pack degustación", atracciones, 36);
 		assertEquals(36, promoAbsoluta.getCosto());
 		assertEquals(7.5, promoAbsoluta.getTiempo(), 0.001);
 		assertEquals(TipoDeAtracciones.DEGUSTACION, promoAbsoluta.getTipoDeAtraccion());
@@ -71,10 +71,10 @@ public class PromocionTest {
 	public void promocionAxBTest() {
 		//Pack paisajes: Comprando Minas Tirith y el Abismo de Helm, Erebor es gratis.
 		List<Atraccion> otrasAtracciones = new ArrayList<Atraccion>();
-		otrasAtracciones.add(new Atraccion(5, 2.5, 25, TipoDeAtracciones.PAISAJE, "Minas Tirith"));
-		otrasAtracciones.add(new Atraccion(5, 2.0, 15, TipoDeAtracciones.PAISAJE, "Abismo de Helm"));
-		atracciones.add(new Atraccion(12, 3.0, 32, TipoDeAtracciones.PAISAJE, "Erebor"));
-		PromocionAXB promoAxB = new PromocionAXB("Mi Promo AxB", atracciones, otrasAtracciones);
+		otrasAtracciones.add(new Atraccion(0, 5, 2.5, 25, TipoDeAtracciones.PAISAJE, "Minas Tirith"));
+		otrasAtracciones.add(new Atraccion(0, 5, 2.0, 15, TipoDeAtracciones.PAISAJE, "Abismo de Helm"));
+		atracciones.add(new Atraccion(0, 12, 3.0, 32, TipoDeAtracciones.PAISAJE, "Erebor"));
+		PromocionAXB promoAxB = new PromocionAXB(0, 0, "Mi Promo AxB", atracciones, otrasAtracciones);
 		assertEquals(10, promoAxB.getCosto());
 		assertEquals(7.5, promoAxB.getTiempo(), 0.001);
 		assertEquals(TipoDeAtracciones.PAISAJE, promoAxB.getTipoDeAtraccion());

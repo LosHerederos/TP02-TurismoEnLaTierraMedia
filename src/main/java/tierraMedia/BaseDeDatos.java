@@ -6,13 +6,14 @@ import java.util.List;
 
 import dao.AtraccionDAO;
 import dao.DAOFactory;
+import dao.PromocionDAO;
 import dao.UsuarioDAO;
 
 public class BaseDeDatos {
 
 	public static List<Atraccion> cargarAtracciones() {
 		AtraccionDAO atraccionDAO = DAOFactory.getAtraccionDAO();
-		
+
 		List<Atraccion> atracciones = null;
 		
 		try {
@@ -20,13 +21,21 @@ public class BaseDeDatos {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 		return atracciones;
 	}
 	
 	public static List<Promocion> cargarPromociones(List<Atraccion> todasLasAtracciones) {
-		List<Promocion> promociones = new ArrayList<Promocion>();
+		PromocionDAO promocionDAO = DAOFactory.getPromocionDAO();
+
+		List<Promocion> promociones = null;
 		
+		try {
+			promociones = promocionDAO.findAll(todasLasAtracciones);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
 		return promociones;
 	}
 	
@@ -40,7 +49,7 @@ public class BaseDeDatos {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 		return usuarios;
 	}
 	

@@ -90,12 +90,12 @@ public class ItinerarioDAOImpl implements ItinerarioDAO {
 		List<Integer> idsPromociones = new ArrayList<Integer>();
 		
 		while (resultados.next()) {
-			Integer idPromocion = resultados.getInt("idAtraccion");
+			Integer idPromocion = resultados.getInt("idPromocion");
 			idsPromociones.add(idPromocion);
 		}
 		
 		for (Promocion promocion: todasLasPromociones) {
-			Integer idPromocion = 0; //promocion.getIdPromocion();
+			Integer idPromocion = promocion.getIdPromocion();
 			if (idsPromociones.contains(idPromocion)) {
 				itinerario.getPromociones().add(promocion);
 			}

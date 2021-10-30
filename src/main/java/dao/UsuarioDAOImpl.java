@@ -97,10 +97,7 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 				+ "SET presupuesto = ?,\n"
 				+ "tiempoDisponible = ?\n"
 				+ "WHERE idUsuario = ?;";
-		System.out.println(sql);
-		System.out.println(usuario.getPresupuesto());
-		System.out.println(usuario.getTiempoDisponible());
-		System.out.println(usuario.getIdUsuario());
+		
 		Connection conexion = ConnectionProvider.getConnection();
 		PreparedStatement statement = conexion.prepareStatement(sql);
 		statement.setInt(1, usuario.getPresupuesto());
@@ -121,6 +118,7 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 
 		for (Usuario usuario: usuarios) {
 			this.itinerarioDAO.findAtracciones(usuario.getItinerario(), todasLasAtracciones);
+			this.itinerarioDAO.findPromociones(usuario.getItinerario(), todasLasPromociones);
 		}
 		
 		return usuarios;

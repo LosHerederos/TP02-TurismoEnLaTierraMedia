@@ -5,12 +5,18 @@ import java.util.Iterator;
 import java.util.List;
 
 public class PromocionAXB extends Promocion {
+	private int idPromocionAXB;
 	List<Atraccion> atraccionesPagas = new ArrayList<Atraccion>();
 
-	public PromocionAXB(String nombre, List<Atraccion> atracciones, List<Atraccion> atraccionesPagas) {
-		super(nombre, atracciones);
+	public PromocionAXB(int idPromocion, int idPromocionAXB, String nombre, List<Atraccion> atracciones, List<Atraccion> atraccionesPagas) {
+		super(idPromocion, nombre, atracciones);
+		this.idPromocionAXB = idPromocionAXB;
 		this.setAtraccionesPagas(atraccionesPagas);
 
+	}
+	
+	public int getIdPromocionAXB() {
+		return this.idPromocionAXB;
 	}
 
 	public List<Atraccion> getAtraccionesPagas() {

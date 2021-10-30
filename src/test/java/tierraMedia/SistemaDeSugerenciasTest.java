@@ -54,9 +54,9 @@ public class SistemaDeSugerenciasTest {
         atracciones.add(new Atraccion(0, 5, 2.5, 25, TipoDeAtracciones.AVENTURA, "Minas Tirith"));
         atracciones.add(new Atraccion(0, 20, 2.0, 7, TipoDeAtracciones.AVENTURA, "Otra que es Gratis"));
 		
-		PromocionAbsoluta p1 = new PromocionAbsoluta("Pack Aventura 1", atracciones.subList(0, 1), 50);
-		PromocionAXB p2 = new PromocionAXB("Pack aventura3", atracciones.subList(2, 3), atracciones.subList(4, 4));
-		PromocionPorcentual p3 = new PromocionPorcentual("Pack Aventura", atracciones, 20.0);
+		PromocionAbsoluta p1 = new PromocionAbsoluta(0, 0, "Pack Aventura 1", atracciones.subList(0, 1), 50);
+		PromocionAXB p2 = new PromocionAXB(0, 0, "Pack aventura3", atracciones.subList(2, 3), atracciones.subList(4, 4));
+		PromocionPorcentual p3 = new PromocionPorcentual(0, 0, "Pack Aventura", atracciones, 20.0);
 
 		desordenadas.add(p3);
 		desordenadas.add(p1);

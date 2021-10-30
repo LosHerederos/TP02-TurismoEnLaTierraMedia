@@ -5,19 +5,31 @@ import java.util.Iterator;
 import java.util.List;
 
 public abstract class Promocion implements Sugeribles {
+	private int idPromocion;
 	protected String nombre;
 	private List<Atraccion> atracciones = new ArrayList<Atraccion>();
 	private TipoDeAtracciones tipoDeAtraccion;
 
-	public Promocion(String nombre, List<Atraccion> atracciones) {
+	public Promocion(int idPromocion, String nombre, List<Atraccion> atracciones) {
+		this.idPromocion = idPromocion;
 		this.setNombre(nombre);
 		this.setAtraccion(atracciones);
-		this.setTipodeAtraccion();
+		if (!atracciones.isEmpty()) {
+			this.setTipodeAtraccion();
+		}
+		
 	}
 
 	public Promocion() {
+		this.idPromocion = 0;
 		this.setNombre(null);
-		this.setTipodeAtraccion();
+		if (!this.atracciones.isEmpty()) {
+			this.setTipodeAtraccion();
+		}
+	}
+	
+	public int getIdPromocion() {
+		return this.idPromocion;
 	}
 
 	public String getNombre() {

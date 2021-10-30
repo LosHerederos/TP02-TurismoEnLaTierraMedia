@@ -15,7 +15,7 @@ public class ItinerarioTest {
 		List<Atraccion> atracciones = new ArrayList<Atraccion>();
 		atracciones.add(new Atraccion(0, 35, 1.0, 30, TipoDeAtracciones.DEGUSTACION, "Lothlórien"));
 		atracciones.add(new Atraccion(0, 3, 6.5, 150, TipoDeAtracciones.DEGUSTACION, "La Comarca"));
-		PromocionAbsoluta promoAbsoluta = new PromocionAbsoluta("Pack degustación", atracciones, 36);
+		PromocionAbsoluta promoAbsoluta = new PromocionAbsoluta(0, 0, "Pack degustación", atracciones, 36);
 		Itinerario itinerario = new Itinerario();
 		itinerario.agregarSugerencia(atraccion);
 		itinerario.agregarSugerencia(promoAbsoluta);

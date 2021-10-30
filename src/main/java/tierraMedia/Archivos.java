@@ -101,14 +101,14 @@ public class Archivos {
 			
 			if (tipoDePromocion.equals("PromocionPorcentual")) {
 				double porcentajeDeDescuento = Double.parseDouble(datosDePromociones[i][3]);
-				promociones.add(new PromocionPorcentual(nombre, atracciones, porcentajeDeDescuento));
+				promociones.add(new PromocionPorcentual(0, 0, nombre, atracciones, porcentajeDeDescuento));
 			} else if (tipoDePromocion.equals("PromocionAbsoluta")) {
 				int costoTotal =  Integer.parseInt(datosDePromociones[i][3]);
-				promociones.add(new PromocionAbsoluta(nombre, atracciones, costoTotal));
+				promociones.add(new PromocionAbsoluta(0, 0, nombre, atracciones, costoTotal));
 			} else if (tipoDePromocion.equals("PromocionAXB")) {
 				String[] nombresDeOtrasAtracciones = separarArregloEnString(datosDePromociones[i][3]);
 				List<Atraccion> otrasAtracciones = buscarAtracciones(todasLasAtracciones, nombresDeOtrasAtracciones);
-				promociones.add(new PromocionAXB(nombre, atracciones, otrasAtracciones));
+				promociones.add(new PromocionAXB(0, 0, nombre, atracciones, otrasAtracciones));
 			}
 		}
 		
