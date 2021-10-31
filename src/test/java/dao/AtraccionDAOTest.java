@@ -61,14 +61,13 @@ public class AtraccionDAOTest {
 	@Test
 	public void ActualizarAtraccion() throws SQLException {
 		AtraccionDAO atraccionDAO = DAOFactory.getAtraccionDAO();
-		Atraccion LaOtra = new Atraccion(0,20,5,48,TipoDeAtracciones.DEGUSTACION,"La Otra", 8);
+		Atraccion LaOtra = new Atraccion(0,20,5,48,TipoDeAtracciones.DEGUSTACION,"La Otra", 0);
 		atraccionDAO.insert(LaOtra);
 		LaOtra = atraccionDAO.findByNombre("La Otra");
 		LaOtra.setVisitantes(8);
 		atraccionDAO.update(LaOtra);
 		LaOtra = atraccionDAO.findByNombre("La Otra");
 		assertEquals(8, LaOtra.getVisitantes());
-		
 	}
 	
 	@Test
