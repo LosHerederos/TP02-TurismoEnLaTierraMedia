@@ -63,9 +63,9 @@ public class AtraccionDAOTest {
 		AtraccionDAO atraccionDAO = DAOFactory.getAtraccionDAO();
 		Atraccion LaOtra = new Atraccion(0,20,5,48,TipoDeAtracciones.DEGUSTACION,"La Otra");
 		atraccionDAO.insert(LaOtra);
-		LaOtra.setCostoVisita(48);
+		LaOtra.setVisitantes(8);
 		atraccionDAO.update(LaOtra);
-		assertEquals(48, atraccionDAO.findByNombre("La Otra").getCosto());
+		assertEquals(48, atraccionDAO.findByNombre("La Otra").getVisitantes());
 		
 	}
 	
