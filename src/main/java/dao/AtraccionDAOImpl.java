@@ -64,7 +64,7 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 	
 	public int insert(Atraccion atraccion) throws SQLException {
 		String sql = "INSERT INTO\n"
-				+ "Atracciones (nombre, CostoVisita, tiempoParaRealizarla, cupoPersonas, visitantes, idTipoDeAtraccion)\n"
+				+ "Atracciones (nombre, costoVisita, tiempoParaRealizarla, cupoPersonas, visitantes, idTipoDeAtraccion)\n"
 				+ "VALUES (?, ?, ?, ?, ?, ?)";
 			
 		Connection conexion = ConnectionProvider.getConnection();
@@ -125,7 +125,8 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 			resultado.getDouble("tiempoParaRealizarla"),
 			resultado.getInt("cupoPersonas"),
 			TipoDeAtracciones.values()[resultado.getInt("idTipoDeAtraccion")-1],
-			resultado.getString("nombre")
+			resultado.getString("nombre"),
+			resultado.getInt("visitantes")
 		);
 	}
 }
