@@ -72,7 +72,7 @@ public class Archivos {
 			cupoPersonas = Integer.parseInt(datosDeAtracciones[i][3]);
 			tipoDeAtraccion = TipoDeAtracciones.valueOf(datosDeAtracciones[i][4]);
 			
-			atracciones.add(new Atraccion(0,costoVisita, tiempoParaRealizarla, cupoPersonas, tipoDeAtraccion, nombre));
+			atracciones.add(new Atraccion(0,costoVisita, tiempoParaRealizarla, cupoPersonas, tipoDeAtraccion, nombre, 0));
 		}
 		
 		return atracciones;

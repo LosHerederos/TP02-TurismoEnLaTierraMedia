@@ -13,13 +13,13 @@ public class Atraccion implements Sugeribles {
 	private String nombre;
 
 	// constructor
-	public Atraccion(int idAtraccion, int costo, double tiempo, int cupo, TipoDeAtracciones tipoAtraccion, String nombre) {
+	public Atraccion(int idAtraccion, int costo, double tiempo, int cupo, TipoDeAtracciones tipoAtraccion, String nombre, int visitantes) {
 		this.setIdAtraccion(idAtraccion);
 		this.setCostoVisita(costo);
 		this.setTiempoParaRealizarla(tiempo);
 		this.setCupoPersonas(cupo);
 		this.setTipoDeAtraccion(tipoAtraccion);
-		this.visitantes = 0;
+		this.visitantes = visitantes;
 		this.nombre = nombre;
 	}
 

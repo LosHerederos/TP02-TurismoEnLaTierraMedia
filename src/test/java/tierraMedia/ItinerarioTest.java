@@ -11,10 +11,10 @@ public class ItinerarioTest {
 
 	@Test
 	public void test() {
-		Atraccion atraccion = new Atraccion(0, 3, 4.0, 12, TipoDeAtracciones.AVENTURA, "Bosque Negro");
+		Atraccion atraccion = new Atraccion(0, 3, 4.0, 12, TipoDeAtracciones.AVENTURA, "Bosque Negro", 0);
 		List<Atraccion> atracciones = new ArrayList<Atraccion>();
-		atracciones.add(new Atraccion(0, 35, 1.0, 30, TipoDeAtracciones.DEGUSTACION, "Lothlórien"));
-		atracciones.add(new Atraccion(0, 3, 6.5, 150, TipoDeAtracciones.DEGUSTACION, "La Comarca"));
+		atracciones.add(new Atraccion(0, 35, 1.0, 30, TipoDeAtracciones.DEGUSTACION, "Lothlórien", 0));
+		atracciones.add(new Atraccion(0, 3, 6.5, 150, TipoDeAtracciones.DEGUSTACION, "La Comarca", 0));
 		PromocionAbsoluta promoAbsoluta = new PromocionAbsoluta(0, 0, "Pack degustación", atracciones, 36);
 		Itinerario itinerario = new Itinerario();
 		itinerario.agregarSugerencia(atraccion);

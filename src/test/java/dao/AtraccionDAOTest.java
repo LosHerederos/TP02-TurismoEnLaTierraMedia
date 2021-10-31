@@ -53,7 +53,7 @@ public class AtraccionDAOTest {
 	@Test
 	public void CrearNuevaAtraccion() throws SQLException {
 		AtraccionDAO atraccionDAO = DAOFactory.getAtraccionDAO();
-		Atraccion LaNueva = new Atraccion(0,20,5,48,TipoDeAtracciones.DEGUSTACION,"La Nueva");
+		Atraccion LaNueva = new Atraccion(0,20,5,48,TipoDeAtracciones.DEGUSTACION,"La Nueva", 0);
 		atraccionDAO.insert(LaNueva);
 		assertEquals("La Nueva", atraccionDAO.findByNombre("La Nueva").getNombre());
 		
@@ -61,12 +61,13 @@ public class AtraccionDAOTest {
 	@Test
 	public void ActualizarAtraccion() throws SQLException {
 		AtraccionDAO atraccionDAO = DAOFactory.getAtraccionDAO();
-		Atraccion LaOtra = new Atraccion(0,20,5,48,TipoDeAtracciones.DEGUSTACION,"La Otra");
+		Atraccion LaOtra = new Atraccion(0,20,5,48,TipoDeAtracciones.DEGUSTACION,"La Otra", 0);
 		atraccionDAO.insert(LaOtra);
+		LaOtra = atraccionDAO.findByNombre("La Otra");
 		LaOtra.setVisitantes(8);
 		atraccionDAO.update(LaOtra);
-		assertEquals(48, atraccionDAO.findByNombre("La Otra").getVisitantes());
-		
+		LaOtra = atraccionDAO.findByNombre("La Otra");
+		assertEquals(8, LaOtra.getVisitantes());
 	}
 	
 	@Test
