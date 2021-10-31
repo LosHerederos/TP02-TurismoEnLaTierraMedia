@@ -60,7 +60,6 @@ public class UsuarioDAOTest {
 		UsuarioDAO usuarioDAO = DAOFactory.getUsuarioDAO();
 		Usuario MenganoFulano = new Usuario(0,"Mengano Fulano", 280, 85,TipoDeAtracciones.AVENTURA,null);
 		usuarioDAO.insert(MenganoFulano);
-		//assertEquals("Mengano Fulano", usuarioDAO.findByNombre("Mengano Fulano").getNombre());
 		
 	}
 //	@Test
