@@ -26,9 +26,9 @@ public class SistemaDeSugerenciasTest {
     public void ordenadorPorPrecioYTiempoAtraccionesTest(){
 		List<Atraccion> ordenadas = new ArrayList<>();
 		List<Atraccion> desordenadas = new ArrayList<>();
-		Atraccion a1 = new Atraccion(0, 55, 3.5, 3, TipoDeAtracciones.AVENTURA, "Mi Aventura");
-		Atraccion a2 = new Atraccion(0, 45, 4.5, 4, TipoDeAtracciones.AVENTURA, "Extrema");
-		Atraccion a3 = new Atraccion(0, 45, 2.5, 2, TipoDeAtracciones.AVENTURA, "Otra Aventura");
+		Atraccion a1 = new Atraccion(0, 55, 3.5, 3, TipoDeAtracciones.AVENTURA, "Mi Aventura", 0);
+		Atraccion a2 = new Atraccion(0, 45, 4.5, 4, TipoDeAtracciones.AVENTURA, "Extrema", 0);
+		Atraccion a3 = new Atraccion(0, 45, 2.5, 2, TipoDeAtracciones.AVENTURA, "Otra Aventura", 0);
 		desordenadas.add(a3);
 		desordenadas.add(a1);
 		desordenadas.add(a2);
@@ -48,11 +48,11 @@ public class SistemaDeSugerenciasTest {
         List<Promocion> ordenadas = new ArrayList<>();
 		List<Promocion> desordenadas = new ArrayList<>();
         List<Atraccion> atracciones = new ArrayList<>();
-        atracciones.add(new Atraccion(0, 55, 3.5, 3, TipoDeAtracciones.AVENTURA, "Mi Aventura"));
-        atracciones.add(new Atraccion(0, 45, 2.5, 2, TipoDeAtracciones.AVENTURA, "Otra Aventura"));
-        atracciones.add(new Atraccion(0, 10, 2.0, 6, TipoDeAtracciones.AVENTURA, "Moria"));
-        atracciones.add(new Atraccion(0, 5, 2.5, 25, TipoDeAtracciones.AVENTURA, "Minas Tirith"));
-        atracciones.add(new Atraccion(0, 20, 2.0, 7, TipoDeAtracciones.AVENTURA, "Otra que es Gratis"));
+        atracciones.add(new Atraccion(0, 55, 3.5, 3, TipoDeAtracciones.AVENTURA, "Mi Aventura", 0));
+        atracciones.add(new Atraccion(0, 45, 2.5, 2, TipoDeAtracciones.AVENTURA, "Otra Aventura", 0));
+        atracciones.add(new Atraccion(0, 10, 2.0, 6, TipoDeAtracciones.AVENTURA, "Moria", 0));
+        atracciones.add(new Atraccion(0, 5, 2.5, 25, TipoDeAtracciones.AVENTURA, "Minas Tirith", 0));
+        atracciones.add(new Atraccion(0, 20, 2.0, 7, TipoDeAtracciones.AVENTURA, "Otra que es Gratis", 0));
 		
 		PromocionAbsoluta p1 = new PromocionAbsoluta(0, 0, "Pack Aventura 1", atracciones.subList(0, 1), 50);
 		PromocionAXB p2 = new PromocionAXB(0, 0, "Pack aventura3", atracciones.subList(2, 3), atracciones.subList(4, 4));

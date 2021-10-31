@@ -9,7 +9,7 @@ public class UsuarioTest {
 	@Test
 	public void aceptarSugerenciatest() {
 		Usuario usuario = new Usuario(0, "Pedro", 100, 10.0, TipoDeAtracciones.AVENTURA, null);
-		Atraccion atraccion = new Atraccion(0, 25, 2.5, 10, TipoDeAtracciones.AVENTURA, "Una aventura como ninguna");
+		Atraccion atraccion = new Atraccion(0, 25, 2.5, 10, TipoDeAtracciones.AVENTURA, "Una aventura como ninguna", 0);
 		usuario.aceptarSugerencia(atraccion);
 		assertEquals(1, atraccion.getVisitantes());
 		assertEquals(75, usuario.getPresupuesto());
